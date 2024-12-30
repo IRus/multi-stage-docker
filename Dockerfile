@@ -11,4 +11,4 @@ RUN gradle installDist --no-daemon
 FROM bellsoft/liberica-openjre-alpine:21.0.5
 WORKDIR /app
 COPY --from=builder /app/build/install/ktor /app
-ENTRYPOINT /app/bin/ktor
+ENTRYPOINT ["/app/bin/ktor"]
